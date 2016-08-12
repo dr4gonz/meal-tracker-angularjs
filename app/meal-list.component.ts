@@ -12,24 +12,48 @@ import {EditMealDetailsComponent} from './edit-meal-details.component';
   directives: [MealDisplayComponent, NewMealComponent, EditMealDetailsComponent],
   pipes: [CaloriePipe],
   template: `
-  <select (change)="selectCalorieFilter($event.target.value)" >
-    <option value="all">All</option>
-    <option value="High-Calorie">High Calorie(> 500)</option>
-    <option value="Low-Calorie">Low Calorie(< 500)</option>
-  </select>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label>Filter your Food!</label>
+        <select class="form-control" (change)="selectCalorieFilter($event.target.value)" >
+          <option value="all">All</option>
+          <option value="High-Calorie">High Calorie(> 500)</option>
+          <option value="Low-Calorie">Low Calorie(< 500)</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <new-meal (newMealSubmit)="createMeal($event)"></new-meal>
+      </div>
+      <div class="col-md-4">
+        <edit-meal-details *ngIf="selectedMeal"
+        [meal]="selectedMeal"
+        (onEditCompletion)="deselectMeal($event)">
+        </edit-meal-details>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <meal-display *ngFor="#currentMeal of meals | calories:filterCalories"
+          [meal]="currentMeal"
+          [class.selected]="currentMeal === selectedMeal"
+          (click)="mealClicked(currentMeal)">
+          </meal-display>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
 
-  <meal-display *ngFor="#currentMeal of meals | calories:filterCalories"
-    [meal]="currentMeal"
-    [class.selected]="currentMeal === selectedMeal"
-    (click)="mealClicked(currentMeal)">
-  </meal-display>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
 
-  <new-meal (newMealSubmit)="createMeal($event)"></new-meal>
-
-  <edit-meal-details *ngIf="selectedMeal"
-  [meal]="selectedMeal"
-  (onEditCompletion)="deselectMeal($event)">
-  </edit-meal-details>
+      </div>
+    </div>
+  </div>
   `
 })
 

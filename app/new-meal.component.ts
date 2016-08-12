@@ -5,19 +5,21 @@ import {Meal} from './meal.model';
   inputs: ['meal'],
   outputs: ['newMealSubmit'],
   template: `
-    <h4>Add a Meal</h4>
-    <form>
-      <input placeholder="Meal Name" #newName required>
+  <div class='col-md-12'>
+    <label>Add a Meal</label>
+    <form class="form-group">
+      <input class="form-control" placeholder="Meal Name" #newName required>
       <label for="mealOfDaySelect">Meal of the Day:</label>
-      <select id="mealOfDaySelect" #newMealOfDay>
+      <select class="form-control" id="mealOfDaySelect" #newMealOfDay>
         <option selected value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
       </select>
-      <input placeholder="Meal Notes" #newNotes required>
-      <input placeholder="Calories" #newCalories required>
-      <button (click)="submitForm(newName, newMealOfDay, newCalories, newNotes)">Add</button>
+      <input class="form-control" placeholder="Calories" #newCalories required>
+      <input class="form-control" placeholder="Meal Notes" #newNotes required>
+      <button class="btn btn-success btn-small" (click)="submitForm(newName, newMealOfDay, newCalories, newNotes)">Add</button>
     </form>
+  </div>
     `
 })
 export class NewMealComponent {
