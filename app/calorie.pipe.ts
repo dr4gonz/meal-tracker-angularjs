@@ -9,7 +9,6 @@ export class CaloriePipe implements PipeTransform {
   transform(input: Meal[], args){
     var selectedFilter = args[0];
     var filteredMeals: Meal[] = [];
-    console.log(selectedFilter);
     if(selectedFilter === 'all') {
       return input;
     } else if (selectedFilter === "High-Calorie"){
@@ -25,7 +24,6 @@ export class CaloriePipe implements PipeTransform {
         }
       })
     }
-    console.log(filteredMeals);
     return filteredMeals;
 
   }

@@ -26,7 +26,10 @@ import {EditMealDetailsComponent} from './edit-meal-details.component';
 
   <new-meal (newMealSubmit)="createMeal($event)"></new-meal>
 
-  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
+  <edit-meal-details *ngIf="selectedMeal"
+  [meal]="selectedMeal"
+  (onEditCompletion)="deselectMeal($event)">
+  </edit-meal-details>
   `
 })
 
@@ -51,10 +54,13 @@ export class MealListComponent {
   }
   createMeal(params) {
     this.meals.push(new Meal(params[0],params[1],params[2],params[3]));
-    console.log(this.meals);
   }
   selectCalorieFilter(selection: string) {
     this.filterCalories = selection;
-    console.log(selection);
+  }
+  deselectMeal(editStatus) {
+    if(editStatus) {
+      this.selectedMeal = null;
+    }
   }
 }
