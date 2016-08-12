@@ -14,7 +14,7 @@ import {Meal} from './meal.model';
         <option selected value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
-      </select>
+      </select><br>
       <input class="form-control" placeholder="Calories" #newCalories required>
       <input class="form-control" placeholder="Meal Notes" #newNotes required>
       <button class="btn btn-success btn-small" (click)="submitForm(newName, newMealOfDay, newCalories, newNotes)">Add</button>

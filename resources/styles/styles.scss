@@ -1,0 +1,28 @@
+$navy: #2C3E50;
+$red: #E74C3C;
+$offwhite: #ECF0F1;
+$babyblue: #3498DB;
+$darkerbabyblue: #2980B9;
+
+
+body {
+  background-color: $navy;
+  h1, h2, h3, h5, h6 {
+    color: $babyblue;
+  }
+  h4 {
+    color: $darkerbabyblue;
+  }
+  label {
+    color: $red;
+  }
+}
+.selected {
+  color: $red;
+}
+.meal-display {
+  background-color: $offwhite;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border: 1px solid $red;
+}

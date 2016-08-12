@@ -9,15 +9,15 @@ import {Meal} from './meal.model';
   <div class="col-md-12 meal-form-details">
     <label>Edit Meal: </label>
     <form class="form-group">
-      <input [(ngModel)]="meal.name" class="form-control col-sm-12 input-sm"/>
+      <input [(ngModel)]="meal.name" class="form-control col-sm-12"/>
       <label for="mealOfDaySelect">Meal of the Day:</label>
       <select class="form-control" id="mealOfDaySelect" [(ngModel)]="meal.mealOfDay">
         <option selected value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
-      </select>
-      <input [(ngModel)]="meal.calories" class="form-control col-sm-12 input-sm"/>
-      <input [(ngModel)]="meal.notes" class="form-control col-sm-12 input-sm"/>
+      </select><br>
+      <input [(ngModel)]="meal.calories" class="form-control col-sm-12"/>
+      <input [(ngModel)]="meal.notes" class="form-control col-sm-12"/>
       <button class="btn btn-primary" type="button" (click)="onSubmit(true)">Submit</button>
     </form>
   </div>

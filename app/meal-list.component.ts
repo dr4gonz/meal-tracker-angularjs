@@ -34,7 +34,7 @@ import {EditMealDetailsComponent} from './edit-meal-details.component';
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <meal-display *ngFor="#currentMeal of meals | calories:filterCalories"
           [meal]="currentMeal"
           [class.selected]="currentMeal === selectedMeal"
@@ -68,7 +68,9 @@ export class MealListComponent {
     this.meals = [
       new Meal('2 Eggs', 'Breakfast', "120", 'Fried in Butter'),
       new Meal('Turkey Sandwich', 'Lunch', "200", 'Mayo, Mustard, Lettuce, Cheese on Whole Wheat'),
-      new Meal('Chicken and Vegetables', 'Dinner', "400", 'Side of white rice')
+      new Meal('Chicken and Vegetables', 'Dinner', "400", 'Side of white rice'),
+      new Meal('2 Eggs', 'Breakfast', "120", 'Fried in Butter'),
+      new Meal('Turkey Sandwich', 'Lunch', "200", 'Mayo, Mustard, Lettuce, Cheese on Whole Wheat')
     ]
   }
 
